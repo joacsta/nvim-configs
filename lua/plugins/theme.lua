@@ -1,0 +1,1 @@
+/home/zang/.config/omarchy/current/theme/neovim.lua

@@ -6,3 +6,17 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+--
+-- lua/config/autocmds.lua
+
+-- João, este comando só abre o Neo-tree se você abrir um arquivo de verdade
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    -- Verifica se o arquivo aberto não é um tipo especial (como o dashboard)
+    if vim.bo.buftype == "" then
+      vim.cmd("Neotree show")
+      -- Opcional: devolve o foco para o arquivo
+      vim.cmd("wincmd p")
+    end
+  end,
+})
