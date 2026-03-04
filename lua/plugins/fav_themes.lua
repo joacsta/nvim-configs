@@ -11,9 +11,9 @@ return {
         options = {
           transparent = true,
           styles = {
-            comments   = "italic",
-            keywords   = "bold",
-            functions  = "italic,bold",
+            comments  = "italic",
+            keywords  = "bold",
+            functions = "italic,bold",
           },
         },
       })
@@ -34,19 +34,19 @@ return {
         flavour = "mocha", -- latte, frappe, macchiato, mocha
         transparent_background = false,
         styles = {
-          comments    = { "italic" },
-          keywords    = { "bold" },
-          functions   = { "italic", "bold" },
+          comments  = { "italic" },
+          keywords  = { "bold" },
+          functions = { "italic", "bold" },
         },
         integrations = {
-          treesitter   = true,
-          telescope    = { enabled = true },
-          neotree      = true,
-          gitsigns     = true,
-          cmp          = true,
-          mason        = true,
-          which_key    = true,
-          lsp_trouble  = true,
+          treesitter  = true,
+          telescope   = { enabled = true },
+          neotree     = true,
+          gitsigns    = true,
+          cmp         = true,
+          mason       = true,
+          which_key   = true,
+          lsp_trouble = true,
         },
       })
       -- vim.cmd.colorscheme("catppuccin mocha")
@@ -71,7 +71,7 @@ return {
         },
         theme = "wave", -- wave, dragon, lotus
       })
-      vim.cmd.colorscheme("kanagawa")
+      -- vim.cmd.colorscheme("kanagawa")
     end,
   },
 }
