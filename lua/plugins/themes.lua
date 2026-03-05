@@ -17,7 +17,6 @@ return {
                     },
                 },
             })
-            -- vim.cmd.colorscheme("github_dark")
         end,
     },
 
@@ -34,9 +33,8 @@ return {
             math.randomseed(os.time())
             local chosen = themes[math.random(#themes)]
 
-
             require("catppuccin").setup({
-                flavour = "mocha", -- latte, frappe, macchiato, mocha
+                flavour = chosen,
                 transparent_background = false,
                 styles = {
                     comments  = { "italic" },
@@ -53,9 +51,7 @@ return {
                     which_key   = true,
                     lsp_trouble = true,
                 },
-                theme = chosen,
             })
-            -- vim.cmd.colorscheme("catppuccin mocha")
         end,
     },
 
@@ -101,9 +97,12 @@ return {
                     functions = { italic = true, bold = true },
                 },
             })
-        end
-
+        end,
     },
+
+    -- ═══════════════════════════════════════════
+    --  Dracula
+    -- ═══════════════════════════════════════════
     {
         "Mofiqul/dracula.nvim",
         name = "dracula",
@@ -118,8 +117,21 @@ return {
                     functions = { italic = true, bold = true },
                 },
             })
-        end
+        end,
+    },
 
-
-    }
+    -- ═══════════════════════════════════════════
+    --  Everforest
+    -- ═══════════════════════════════════════════
+    {
+        "sainnhe/everforest",
+        name = "everforest",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.everforest_background         = "hard" -- soft, medium, hard
+            vim.g.everforest_better_performance = 1
+            vim.g.everforest_enable_italic      = 1
+        end,
+    },
 }
