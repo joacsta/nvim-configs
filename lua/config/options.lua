@@ -9,21 +9,29 @@ vim.g.maplocalleader = ","
 opt.smoothscroll = false
 opt.relativenumber = true
 
+vim.diagnostic.config({
+    float = {
+        max_width = 80, -- largura máxima do float
+        wrap = true,    -- quebra o texto
+    },
+})
+
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
     once = true,
     callback = function()
         local themes = {
-            "github_dark",
-            "catppuccin-mocha",
             "catppuccin-frappe",
             "catppuccin-macchiato",
+            "catppuccin-mocha",
+            "dracula",
+            "everforest",
+            "github_dark",
             "kanagawa-dragon",
             "kanagawa-wave",
-            "tokyonight-night",
             "tokyonight-moon",
+            "tokyonight-night",
             "tokyonight-storm",
-            "dracula"
         }
         math.randomseed(os.time())
         local chosen = themes[math.random(#themes)]
