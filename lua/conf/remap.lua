@@ -6,6 +6,29 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
 
+
+
+-- Navegação entre janelas
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<C-e>', '<C-w>w') -- opcional
+
+-- Listar buffers e escolher
+vim.keymap.set('n', '<leader><leader>', ':buffers<CR>:buffer ', {
+    desc = 'Listar buffers'
+})
+
+-- Fechar todos os buffers exceto o atual
+vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', {
+    desc = 'Fechar outros buffers'
+})
+
+vim.keymap.set('n', '<leader>qq', ':qa!<CR>', {
+    desc = 'Sair de tudo sem salvar'
+})
+
 -- ═══════════════════════════════════════════
 --  Salvar
 -- ═══════════════════════════════════════════
