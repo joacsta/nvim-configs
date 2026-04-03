@@ -24,6 +24,9 @@ return {
 				end,
 				desc = "Oil flutuante (root)",
 			},
+			{
+				["q"] = "actions.close",
+			},
 		},
 		opts = {
 			default_file_explorer = true,
