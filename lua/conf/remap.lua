@@ -20,7 +20,12 @@ vim.keymap.set('n', '<C-e>', '<C-w>w') -- opcional
 vim.keymap.set('n', '<leader><leader>', ':buffers<CR>:buffer ', {
     desc = 'Listar buffers'
 })
-
+-- Próximo buffer: ]b
+vim.keymap.set("n", "]b", "<Cmd>BufferNext<CR>", { desc = "Next buffer" })
+-- Buffer anterior: [b
+vim.keymap.set("n", "[b", "<Cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+-- Deletar buffer atual: <leader>bd
+vim.keymap.set("n", "<leader>bd", "<Cmd>BufferClose<CR>", { desc = "Delete buffer" })
 -- Fechar todos os buffers exceto o atual
 vim.keymap.set('n', '<leader>bo', ':%bd|e#|bd#<CR>', {
     desc = 'Fechar outros buffers'
